@@ -7,20 +7,24 @@
 	<h:panelGrid columns="1" width="100%">
 		<p:outputLabel value="#{msg['pages.comum.cabecalho.headerText']}" />
 	</h:panelGrid>
-	
+	  <h:form>
 	<p:dock position="bottom">
-	    <p:menuitem>
-	    	<h:form>
-			    <p:growl id="messages" showDetail="true"/>
-			    <p:menuButton value="Validação">
-			        <p:menuitem value="Times" update="messages" url="#"/>
-			        <p:menuitem value="Jogadores" update="messages" url="#"/>
-			        <p:menuitem value="Árbitro" ajax="false" url="#"/>
-			    </p:menuButton>
-			</h:form>
-		</p:menuitem>
-		<p:menuitem value="Súmula" icon="" url="#"/>
-	    <p:menuitem value="Processos" icon="" url="#"/>
+	  
+		    <p:menuitem>
+		    	
+				    <p:growl id="messages" showDetail="true"/>
+				    <p:menuButton value="Validação">
+				    	<h:form>
+					        <p:menuitem value="Times" update="messages" url="#"/>
+					        <p:menuitem value="Jogadores" update="messages" url="#"/>
+					        <p:menuitem value="Árbitro" ajax="false" url="#"/>
+				        </h:form>
+				    </p:menuButton>
+				
+			</p:menuitem>
+			<p:menuitem value="Súmula" icon="" url="#"/>
+		    <p:menuitem value="Processos" icon="" url="#"/>
+	  
     </p:dock>
-
+  </h:form>
 </ui:composition>

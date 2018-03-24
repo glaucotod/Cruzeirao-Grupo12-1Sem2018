@@ -1,19 +1,21 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+<h:html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
 	<f:view>
-			<style> .ui-datagrid-no-border .ui-datagrid-content { border: none; } </style>
-			<title>
-			   <ui:insert name="title">
-					<h:outputLabel value="#{msg['pages.padrao.titleMainMenu']}" />
-				</ui:insert>
-		    </title>
-		
+		<h:head>
+			<style>
+				.ui-datagrid-no-border .ui-datagrid-content {
+					border: none;
+				}
+			</style>
+		</h:head>
+		<h:body>
 			<p:layout id="globalLayout" fullPage="true">
-				<p:layoutUnit position="north" size="160" >
+				<p:layoutUnit position="north" size="160">
 					<ui:include src="comum/cabecalho.xhtml" />
 				</p:layoutUnit>
 				<p:layoutUnit position="south">
@@ -23,6 +25,6 @@
 					<ui:insert name="principal" />
 				</p:layoutUnit>
 			</p:layout>
-	
+		</h:body>
 	</f:view>
-</ui:composition>
+</h:html>

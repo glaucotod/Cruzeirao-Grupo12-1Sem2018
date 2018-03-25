@@ -1,18 +1,32 @@
 <ui:composition template="padrao.xhtml"
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:p="http://primefaces.org/ui"
-xmlns:ui2="http://java.sun.com/jsf/facelets"
-xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
 
-	<ui:define name="principal">	  
-		<h1>
-			<p:panelGrid columns="1" width="100%">
-				<h:outputText value="Últimos processos"/>
-			</p:panelGrid>
-		</h1>   
+	<ui:define name="principal">
+		<h:form id="form">
+			<p:growl id="msgs" showDetail="true" />
+			<p:accordionPanel>
+				<p:tab title="Processo 1">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:outputText value="Pegar das últimas atualizações..." />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Processo 2">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:outputText value="Pegar das últimas atualizações..." />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Processo 3">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:outputText value="Pegar das últimas atualizações..." />
+					</h:panelGrid>
+				</p:tab>
+			</p:accordionPanel>
+		</h:form>
 	</ui:define>
-			
 </ui:composition>

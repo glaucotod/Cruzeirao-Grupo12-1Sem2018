@@ -3,28 +3,33 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
-	<h:panelGrid columns="1" width="100%">
-		<p:outputLabel value="#{msg['pages.comum.cabecalho.headerText']}" />
-	</h:panelGrid>
-	  <h:form>
-	<p:dock position="bottom">
-	  
-		    <p:menuitem>
-		    	
-				    <p:growl id="messages" showDetail="true"/>
-				    <p:menuButton value="Validação">
-				    	<h:form>
-					        <p:menuitem value="Times" update="messages" url="#"/>
-					        <p:menuitem value="Jogadores" update="messages" url="#"/>
-					        <p:menuitem value="Árbitro" ajax="false" url="#"/>
-				        </h:form>
-				    </p:menuButton>
-				
-			</p:menuitem>
-			<p:menuitem value="Súmula" icon="" url="#"/>
-		    <p:menuitem value="Processos" icon="" url="#"/>
-	  
-    </p:dock>
-  </h:form>
+
+	<h:form>
+		<p:growl id="messages"/>
+		<p:menubar>
+			<p:submenu label="Cadastro">
+				<p:menuitem value="Time" url="#" />
+				<p:menuitem value="Jogador" url="#" />
+				<p:menuitem value="Juiz" url="#" />
+				<p:menuitem value="Ginásio" url="#" />
+				<p:menuitem value="Campeonato" url="#" />
+			</p:submenu>
+
+			<p:submenu label="Processos">
+				<p:menuitem value="Time" url="#" />
+				<p:menuitem value="Jogador" url="#" />
+				<p:menuitem value="Juiz" url="#" />
+			</p:submenu>
+
+			<p:menuitem value="Súmula" url="#" />
+			<p:menuitem value="Quit" url="#" icon="ui-icon-close" />
+
+			<f:facet name="login">
+				<p:inputText placeholder="email" />
+				<p:inputText placeholder="Senha" />
+				<p:commandButton type="button" value="Login" icon="" />
+				<p:commandButton type="button" value="Registre-se" icon="" />
+			</f:facet>
+		</p:menubar>
+	</h:form>
 </ui:composition>

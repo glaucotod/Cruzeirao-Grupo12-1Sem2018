@@ -15,15 +15,9 @@
 		</h:head>
 		<h:body>
 			<p:layout id="globalLayout" fullPage="true">
-				<p:layoutUnit position="north" size="160">
-					<ui:include src="comum/cabecalho.xhtml" />
-				</p:layoutUnit>
-				<p:layoutUnit position="south">
-					<ui:include src="comum/rodape.xhtml" />
-				</p:layoutUnit>
-				<p:layoutUnit position="center">
-					<ui:insert name="principal" />
-				</p:layoutUnit>
+				<ui:include src="comum/cabecalho.xhtml" />
+				<ui:insert name="principal" />
+				<ui:include src="comum/rodape.xhtml" />	
 			</p:layout>
 		</h:body>
 	</f:view>

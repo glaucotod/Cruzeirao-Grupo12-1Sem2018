@@ -7,28 +7,28 @@
 	<h:form>
 		<p:growl id="messages"/>
 		<p:menubar>
-			<p:submenu label="Cadastro">
-				<p:menuitem value="Time" url="#" />
-				<p:menuitem value="Jogador" url="#" />
-				<p:menuitem value="Juiz" url="#" />
-				<p:menuitem value="Ginásio" url="#" />
-				<p:menuitem value="Campeonato" url="#" />
+			<p:submenu label="#{msg['pages.comum.cabecalho.register']}">
+				<p:menuitem value="#{msg['pages.comum.cabecalho.team']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.player']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.referee']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.gym']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.championship']}" url="#" />
 			</p:submenu>
 
-			<p:submenu label="Processos">
-				<p:menuitem value="Time" url="#" />
-				<p:menuitem value="Jogador" url="#" />
-				<p:menuitem value="Juiz" url="#" />
+			<p:submenu label="pages.comum.cabecalho.process">
+				<p:menuitem value="pages.comum.cabecalho.team" url="#" />
+				<p:menuitem value="pages.comum.cabecalho.player" url="#" />
+				<p:menuitem value="pages.comum.cabecalho.referee" url="#" />
 			</p:submenu>
 
-			<p:menuitem value="Súmula" url="#" />
-			<p:menuitem value="Quit" url="#" icon="ui-icon-close" />
+			<p:menuitem value="pages.comum.cabecalho.cutlery" url="#" />
+			<p:menuitem value="pages.comum.cabecalho.quit" url="#" icon="ui-icon-close" />
 
 			<f:facet name="login">
-				<p:inputText placeholder="email" />
-				<p:inputText placeholder="Senha" />
-				<p:commandButton type="button" value="Login" icon="" />
-				<p:commandButton type="button" value="Registre-se" icon="" />
+				<p:inputText placeholder="pages.comum.cabecalho.email" />
+				<p:inputText placeholder="pages.comum.cabecalho.password" />
+				<p:commandButton type="button" value="pages.comum.cabecalho.login"/>
+				<p:commandButton type="button" value="pages.comum.cabecalho.logon"/>
 			</f:facet>
 		</p:menubar>
 	</h:form>

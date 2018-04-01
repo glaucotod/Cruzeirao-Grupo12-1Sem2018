@@ -15,20 +15,20 @@
 				<p:menuitem value="#{msg['pages.comum.cabecalho.championship']}" url="#" />
 			</p:submenu>
 
-			<p:submenu label="pages.comum.cabecalho.process">
-				<p:menuitem value="pages.comum.cabecalho.team" url="#" />
-				<p:menuitem value="pages.comum.cabecalho.player" url="#" />
-				<p:menuitem value="pages.comum.cabecalho.referee" url="#" />
+			<p:submenu label="#{msg['pages.comum.cabecalho.process']}">
+				<p:menuitem value="#{msg['pages.comum.cabecalho.team']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.player']}" url="#" />
+				<p:menuitem value="#{msg['pages.comum.cabecalho.referee']}" url="#" />
 			</p:submenu>
 
-			<p:menuitem value="pages.comum.cabecalho.cutlery" url="#" />
-			<p:menuitem value="pages.comum.cabecalho.quit" url="#" icon="ui-icon-close" />
+			<p:menuitem value="#{msg['pages.comum.cabecalho.cutlery']}" url="#" />
+			<p:menuitem value="#{msg['pages.comum.cabecalho.quit']}" url="#" icon="ui-icon-close" />
 
 			<f:facet name="login">
-				<p:inputText placeholder="pages.comum.cabecalho.email" />
-				<p:inputText placeholder="pages.comum.cabecalho.password" />
-				<p:commandButton type="button" value="pages.comum.cabecalho.login"/>
-				<p:commandButton type="button" value="pages.comum.cabecalho.logon"/>
+				<p:inputText placeholder="#{msg['pages.comum.cabecalho.email']}" />
+				<p:inputText placeholder="#{msg['pages.comum.cabecalho.password']}" />
+				<p:commandButton type="button" value="#{msg['pages.comum.cabecalho.login']}"/>
+				<p:commandButton type="button" value="#{msg['pages.comum.cabecalho.logon']}"/>
 			</f:facet>
 		</p:menubar>
 	</h:form>

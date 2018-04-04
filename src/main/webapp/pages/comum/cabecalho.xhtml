@@ -7,7 +7,7 @@
 	<h:form>
 		<p:growl id="messages"/>
 		<p:menubar>
-			<p:submenu label="#{msg['pages.comum.cabecalho.register']}">
+			<p:submenu rendered="#{usuarioMB.resp_time}" label="#{msg['pages.comum.cabecalho.register']}">
 				<p:menuitem value="#{msg['pages.comum.cabecalho.team']}" url="#" />
 				<p:menuitem value="#{msg['pages.comum.cabecalho.player']}" url="#" />
 				<p:menuitem value="#{msg['pages.comum.cabecalho.referee']}" url="#" />
@@ -15,13 +15,13 @@
 				<p:menuitem value="#{msg['pages.comum.cabecalho.championship']}" url="#" />
 			</p:submenu>
 
-			<p:submenu label="#{msg['pages.comum.cabecalho.process']}">
+			<p:submenu rendered="#{usuarioMB.admin}" label="#{msg['pages.comum.cabecalho.process']}">
 				<p:menuitem value="#{msg['pages.comum.cabecalho.team']}" url="#" />
 				<p:menuitem value="#{msg['pages.comum.cabecalho.player']}" url="#" />
 				<p:menuitem value="#{msg['pages.comum.cabecalho.referee']}" url="#" />
 			</p:submenu>
 
-			<p:menuitem value="#{msg['pages.comum.cabecalho.cutlery']}" url="#" />
+			<p:menuitem rendered="#{usuarioMB.juiz}" value="#{msg['pages.comum.cabecalho.cutlery']}" url="#" />
 			<p:menuitem value="#{msg['pages.comum.cabecalho.quit']}" url="#" icon="ui-icon-close" />
 
 			<f:facet name="login">

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Classificação</title>
+</h:head>
+    
+    <h:body>
+  		 <p:dataTable id="basicDT" var="car" value="#{dtSelectionView.cars1}">
+        <f:facet name="header">
+           Classificação
+        </f:facet>
+       	<p:column headerText="Colocação">
+            <h:outputText value="#{time.colocacao}" />
+        </p:column>
+        <p:column headerText="Time">
+            <h:outputText value="#{time.nome}" />
+        </p:column>
+        <p:column headerText="Vitorias">
+            <h:outputText value="#{time.vitorias}" />
+        </p:column>
+        <p:column headerText="Gols">
+            <h:outputText value="#{time.gols}" />
+        </p:column>
+        <p:column headerText="Cartões">
+            <h:outputText value="#{time.cartoes}" />
+        </p:column>
+    </p:dataTable>
+	</h:body>
+</html>
+
+
+
+
+
+
+

@@ -5,26 +5,37 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta charset="UTF-8" />
-	<title>Detalhes dos Jogos</title>
+		<center><p:commandButton value="Detalhes da Partida" icon="ui-icon-star" /> </center>
+
 </h:head>
     
     <h:body>
-  		 <p:dataTable id="basicDT" var="car" value="#{dtSelectionView.cars1}">
-        <f:facet name="header">
-           Detalhes dos Jogos
-        </f:facet>
-        <p:column headerText="Time">
-            <h:outputText value="#{time.nome}" />
-        </p:column>
-        <p:column headerText="Local do Jogo">
-            <h:outputText value="#{time.local}" />
-        </p:column>
-        <p:column headerText="Gols">
-            <h:outputText value="#{time.gols}" />
-        </p:column>
-        <p:column headerText="Cartões">
-            <h:outputText value="#{time.cartoes}" />
-        </p:column>
-    </p:dataTable>
+     <p:breadCrumb>
+     <p:menuitem value="Menu" url="index.xhtml" />
+	<p:menuitem value="Chaves" url="chaves.xhtml" />
+	<p:menuitem value="Artilharia" url="rankingArt.xhtml" />
+	<p:menuitem value="Classificação" url="classificacao.xhtml" />
+	</p:breadCrumb>
+    
+    
+	<h:form id="formDetalhes">
+		<p:panelGrid columns="9">
+		
+			
+		<p:outputLabel value="Time:" />
+		<p:inputText   value="" />
+		
+		<p:outputLabel value="Local: " />
+		<p:inputText   value="" />
+				
+		<p:outputLabel value="Gols:" />
+		<p:inputText   value="" />
+		
+		<p:outputLabel value="Cartões: " />
+		<p:inputText   value="" />
+		
+		<p:commandButton value="Salvar" action="#{detalhesJogo}" update=":formDetalhes" />
+		</p:panelGrid>
+		</h:form>
 	</h:body>
 </html>

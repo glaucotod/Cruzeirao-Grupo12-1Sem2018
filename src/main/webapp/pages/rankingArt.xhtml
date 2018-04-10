@@ -5,27 +5,34 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta charset="UTF-8" />
-	<title>Ranking Gols</title>
+		<center><p:commandButton value="Artilharia" icon="ui-icon-star" /> </center>
+
 </h:head>
     
     <h:body>
-  		 <p:dataTable id="basicDT" var="car" value="#{dtSelectionView.cars1}">
-        <f:facet name="header">
-           Gols Marcados
-        </f:facet>
-        <p:column headerText="Nome do Jogador">
-            <h:outputText value="#{jogador.nome}" />
-        </p:column>
-        <p:column headerText="Gols">
-            <h:outputText value="#{jogador.gols}" />
-        </p:column>
-    </p:dataTable>
+     <p:breadCrumb>
+     <p:menuitem value="Menu" url="index.xhtml" />
+	<p:menuitem value="Chaves" url="chaves.xhtml" />
+	<p:menuitem value="Detalhes Partida" url="detalhesJogo.xhtml" />
+	<p:menuitem value="Classificação" url="classificacao.xhtml" />
+	</p:breadCrumb>
+    
+    
+	<h:form id="formRanking">
+		<p:panelGrid columns="9">
+		
+			
+		<p:outputLabel value="Time:" />
+		<p:inputText   value="" />
+		
+		<p:outputLabel value="Jogador: " />
+		<p:inputText   value="" />
+				
+		<p:outputLabel value="Gols:" />
+		<p:inputText   value="" />
+		
+		<p:commandButton value="Salvar" action="#{rankingArt}" update=":formRanking" />
+		</p:panelGrid>
+		</h:form>
 	</h:body>
 </html>
-
-
-
-
-
-
-

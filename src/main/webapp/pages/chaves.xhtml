@@ -10,7 +10,13 @@
 </h:head>
     
     <h:body>
-  
+  	 <p:breadCrumb>
+     <p:menuitem value="Menu" url="index.xhtml" />
+	<p:menuitem value="Artilharia" url="rankingArt.xhtml" />
+	<p:menuitem value="Detalhes Partida" url="detalhesJogo.xhtml" />
+	<p:menuitem value="Classificação" url="classificacao.xhtml" />
+	</p:breadCrumb>
+<h:form>
 <p:panelGrid style="margin-top:20px">
     <f:facet name="header">
         <p:row>
@@ -83,6 +89,7 @@
     </p:row>
  
 </p:panelGrid>
+</h:form>
 </h:body>
 </html>
 

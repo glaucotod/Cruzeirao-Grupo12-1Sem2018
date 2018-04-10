@@ -1,0 +1,117 @@
+<ui:composition template="padrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="principal">
+		<h:form id="formCadastroCategoria">
+		
+		<p:panelGrid columns="2">
+			<p:outputLabel value="#{msg['pages.cad_categoria.name']}:"/>
+		 	<p:inputText value=""/>
+		 	
+		 	<p:outputLabel value="#{msg['pages.cad_categoria.bornFrom']}: "/>
+		 	<p:inputText value=""/> 
+		 	            
+            <p:outputLabel value="#{msg['pages.cad_categoria.championship']}"/>
+		 	<p:selectOneMenu id="campeonato" value="" style="width:150px"> 
+                <f:selectItems value="" /> 
+            </p:selectOneMenu>      
+            
+            <p:outputLabel value="#{msg['pages.cad_categoria.minimumOfPlayers']}"/>
+		 	<p:inputText value=""/> 
+               
+            <p:outputLabel value="#{msg['pages.cad_categoria.maximumPlayers']}"/>
+		 	<p:inputText value=""/> 
+		 	
+		 	<p:outputLabel value="#{msg['pages.cad_categoria.gender']}" />
+		 	
+	        <p:selectOneMenu id="sexo" value="" style="width:125px">
+	            <f:selectItem itemLabel="#{msg['pages.cad_categoria.male']}" itemValue="M" />
+	            <f:selectItem itemLabel="#{msg['pages.cad_categoria.male']}" itemValue="F" />
+	        </p:selectOneMenu>
+		 	
+		</p:panelGrid>
+		
+		<p:panelGrid columns="3">
+			<p:outputLabel value="#{msg['pages.cad_categoria.selectTheChampionshipSteps']}"/> 	
+		 		<p:selectOneMenu id="fase" value="" style="width:150px"> 
+                <f:selectItems value="" />   
+            	</p:selectOneMenu>
+            	
+            <p:commandButton value="#{msg['pages.cad_categoria.newStep']}" update=":formCadastroCategoria" />
+            
+            <p:dataTable var="vfase" value="" editable="true" editMode="cell">	
+				<p:column  headerText="#{msg['pages.cad_categoria.category']}">
+					   <p:cellEditor>
+			           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+			                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+			           </p:cellEditor>
+			   </p:column>
+			  </p:dataTable>	
+            	
+						
+		</p:panelGrid>
+		
+		<p:commandButton value="#{msg['pages.cad_categoria.save']}"
+		                
+		                 update=":formCadastroCategoria"  
+		/>		
+		
+		<p:dataTable var="vcategoria" value="" editable="true" editMode="cell">	
+			<p:column  headerText="#{msg['pages.cad_categoria.name']}">
+				   <p:cellEditor>
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		           </p:cellEditor>
+		   </p:column>	
+		   <p:column  headerText="#{msg['pages.cad_categoria.bornFrom']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		   <p:column  headerText="#{msg['pages.cad_categoria.championship']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		   <p:column  headerText="#{msg['pages.cad_categoria.minimumOfPlayers']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		   <p:column  headerText="#{msg['pages.cad_categoria.maximumPlayers']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		    <p:column  headerText="#{msg['pages.cad_categoria.gender']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		   
+			<p:column headerText="#{msg['pages.cad_categoria.delete']}">	
+			     <p:commandLink value="Excluir"  update=":formCadastroCategoria"></p:commandLink>
+			</p:column>	
+			
+		</p:dataTable>	
+		
+		
+	</h:form>
+ </ui:define>
+</ui:composition>

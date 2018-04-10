@@ -1,0 +1,84 @@
+<ui:composition template="padrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="principal">
+		<h:form id="formCadastroEquipe">
+		
+		<p:panelGrid columns="2">
+			<p:outputLabel value="#{msg['pages.cad_equipe.name']}:"/>
+		 	<p:inputText value=""/>
+		 	
+		 	<p:outputLabel value="#{msg['pages.cad_equipe.foundationDate']}: "/>
+		 	<p:inputText value=""/> 
+		 	            
+            
+            <p:outputLabel value="#{msg['pages.cad_equipe.city']}: "/>
+		 	<p:inputText value=""/> 
+               
+		 	
+		</p:panelGrid>
+		
+		<p:panelGrid columns="3">
+			<p:outputLabel value="#{msg['pages.cad_equipe.selectTheDirectors']}: "/> 	
+		 		<p:selectOneMenu id="fase" value="" style="width:150px"> 
+                <f:selectItems value="" />   
+            	</p:selectOneMenu>
+            	
+            <p:commandButton value="#{msg['pages.cad_equipe.newDirector']}" update=":formCadastroEquipe" />
+            
+            <p:dataTable var="vequipe" value="" editable="true" editMode="cell">	
+				<p:column  headerText="#{msg['pages.cad_equipe.directors']}">
+					   <p:cellEditor>
+			           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+			                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+			           </p:cellEditor>
+			   </p:column>
+			  </p:dataTable>	
+            	
+						
+		</p:panelGrid>
+		
+		<p:commandButton value="#{msg['pages.cad_equipe.save']}"
+		                
+		                 update=":formCadastroEquipe"  
+		/>		
+		
+		<p:dataTable var="vequipe" value="" editable="true" editMode="cell">	
+			
+			<p:column  headerText="#{msg['pages.cad_equipe.name']}">
+				   <p:cellEditor>
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		           </p:cellEditor>
+		   </p:column>	
+		   <p:column  headerText="#{msg['pages.cad_equipe.foundationDate']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		   <p:column  headerText="#{msg['pages.cad_equipe.city']}">
+				   <p:cellEditor>        		
+		           		<f:facet name="output"><p:outputLabel value=""/></f:facet>
+		                <f:facet name="input"><p:inputText    value="" style="width:96%"/></f:facet>
+		   			</p:cellEditor>
+		   </p:column>
+		   
+		  
+			<p:column headerText="#{msg['pages.cad_equipe.delete']}">	
+			     <p:commandLink value="Excluir"  update=":formCadastroEquipe"></p:commandLink>
+			</p:column>	
+			
+		</p:dataTable>	
+		
+		
+	</h:form>
+ </ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="UTF-8" />
+		<center><p:commandButton value="Detalhes da Partida" icon="ui-icon-star" /> </center>
+
+</h:head>
+    
+    <h:body>
+     <p:breadCrumb>
+     <p:menuitem value="Menu" url="index.xhtml" />
+	<p:menuitem value="Chaves" url="chaves.xhtml" />
+	<p:menuitem value="Artilharia" url="rankingArt.xhtml" />
+	<p:menuitem value="Classificação" url="classificacao.xhtml" />
+	</p:breadCrumb>
+    
+    
+	<h:form id="formDetalhes">
+		<p:panelGrid columns="9">
+		
+			
+		<p:outputLabel value="Time:" />
+		<p:inputText   value="" />
+		
+		<p:outputLabel value="Local: " />
+		<p:inputText   value="" />
+				
+		<p:outputLabel value="Gols:" />
+		<p:inputText   value="" />
+		
+		<p:outputLabel value="Cartões: " />
+		<p:inputText   value="" />
+		
+		<p:commandButton value="Salvar" action="#{detalhesJogo}" update=":formDetalhes" />
+		</p:panelGrid>
+		</h:form>
+	</h:body>
+</html>

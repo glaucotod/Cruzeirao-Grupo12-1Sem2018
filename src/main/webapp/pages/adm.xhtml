@@ -9,21 +9,21 @@
 
 	<ui:define name="principal">
 		<h:form id="form">
-			<p:growl id="msgs" showDetail="true" />
+			<p:growl id="msg" showDetail="true" />
 			<p:accordionPanel>
-				<p:tab title="pages.adm.process1">
+				<p:tab title="#{msg['pages.adm.process1']}">
 					<h:panelGrid columns="2" cellpadding="10">
-						<h:outputText value="pages.adm.getRecord" />
+						<h:outputText value="#{msg['pages.adm.getRecord']}" />
 					</h:panelGrid>
 				</p:tab>
-				<p:tab title="pages.adm.process2">
+				<p:tab title="#{msg['pages.adm.process2']}">
 					<h:panelGrid columns="2" cellpadding="10">
-						<h:outputText value="pages.adm.getRecord" />
+						<h:outputText value="#{msg['pages.adm.getRecord']}" />
 					</h:panelGrid>
 				</p:tab>
-				<p:tab title="pages.adm.process3">
+				<p:tab title="#{msg['pages.adm.process3']}">
 					<h:panelGrid columns="2" cellpadding="10">
-						<h:outputText value="pages.adm.getRecord" />
+						<h:outputText value="#{msg['pages.adm.getRecord']}" />
 					</h:panelGrid>
 				</p:tab>
 			</p:accordionPanel>

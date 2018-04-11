@@ -1,8 +1,6 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=master
 eclipse.preferences.version=1
-<<<<<<< HEAD
-org.eclipse.jpt.core.platform=generic2_1
-org.eclipse.jpt.jpa.core.discoverAnnotatedClasses=true
-=======
 org.eclipse.jpt.core.platform=eclipselink2_5
-org.eclipse.jpt.jpa.core.discoverAnnotatedClasses=false
->>>>>>> master
+org.eclipse.jpt.jpa.core.discoverAnnotatedClasses=true

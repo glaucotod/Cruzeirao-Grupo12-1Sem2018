@@ -1,10 +1,19 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Fase 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Fase implements Serializable
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	Date datainicio, datafim;
 	Categoria categoria;
 	List<Grupo> grupos;

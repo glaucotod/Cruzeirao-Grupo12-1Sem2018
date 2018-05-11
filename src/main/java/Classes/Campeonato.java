@@ -1,16 +1,25 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Campeonato 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Campeonato implements Serializable
 {
-	String nome;
-	List<Local> locais;
-	List<Juiz> juizes;
-	List<Categoria> categorias;
-	Date datainicioinscricao, datafiminscricao, datainiciocampeonato, datafimcampeonato;
-	double valortaxa;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private String nome;
+	private List<Local> locais;
+	private List<Juiz> juizes;
+	private List<Categoria> categorias;
+	private Date datainicioinscricao, datafiminscricao, datainiciocampeonato, datafimcampeonato;
+	private double valortaxa;
 	
 	
 	public String getNome() 

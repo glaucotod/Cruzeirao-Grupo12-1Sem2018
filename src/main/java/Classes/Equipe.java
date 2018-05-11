@@ -1,14 +1,22 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Equipe 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Equipe implements Serializable
 {
-	String nome,cidade;
-	Date datafundacao;
-	List<Usuario> diretores;
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private String nome,cidade;
+	private Date datafundacao;
+	private List<Usuario> diretores;
 	
 	public String getNome() 
 	{

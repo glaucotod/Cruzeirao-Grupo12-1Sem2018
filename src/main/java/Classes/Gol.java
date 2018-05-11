@@ -1,11 +1,20 @@
 package Classes;
 
-public class Gol 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Gol implements Serializable
 {
-	Inscrito inscrito;
-	int tempo;
-	boolean penalty;
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Inscrito inscrito;
+	private int tempo;
+	private boolean penalty;
 	
 	public Inscrito getInscrito() 
 	{

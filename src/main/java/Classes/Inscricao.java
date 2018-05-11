@@ -1,15 +1,23 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Inscricao 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Inscricao implements Serializable
 {
-	long numero;
-	boolean pagamento, validada;
-	List<Inscrito> inscritos;
-	Categoria categoria;
-	List<Partida> partidas;
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long numero;
+	private boolean pagamento, validada;
+	private List<Inscrito> inscritos;
+	private Categoria categoria;
+	private List<Partida> partidas;
 	
 	public long getNumero() {
 		return numero;

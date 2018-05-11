@@ -1,9 +1,19 @@
 package Classes;
 
-public class Cartao 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Cartao implements Serializable
 {
-	Inscrito inscrito;
-	int tempo;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Inscrito inscrito;
+	private int tempo;
 	
 	
 	public Inscrito getInscrito() 

@@ -1,14 +1,21 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Categoria 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Categoria implements Serializable
 {
-	String nome;
-	int nascidosapartirde, minjogadores, maxjogadores, atribute74;
-	List<Inscricao> inscricoes;
-	List<Fase> fases;
-	Campeonato campeonato;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private String nome;
+	private int nascidosapartirde, minjogadores, maxjogadores, atribute74;
+	private List<Inscricao> inscricoes;
+	private List<Fase> fases;
+	private Campeonato campeonato;
 	
 	
 	public String getNome() 

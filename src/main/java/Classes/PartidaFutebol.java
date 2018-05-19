@@ -2,10 +2,19 @@ package Classes;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class PartidaFutebol 
 {
-	List<Gol> golsmandante, golsvisitantes, golspenaltesmandantes, golspenaltesvisitantes;
-	List<Cartao> cartoesmandante, cartoesvisitantes;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int idPartidaFutebol;
+	private List<Gol> golsmandante, golsvisitantes, golspenaltesmandantes, golspenaltesvisitantes;
+	private List<Cartao> cartoesmandante, cartoesvisitantes;
 	
 	
 	public List<Gol> getGolsmandante() 

@@ -14,10 +14,11 @@ public class Fase implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Date datainicio, datafim;
-	Categoria categoria;
-	List<Grupo> grupos;
-	int numero;
+	private int Idfase;
+	private Date datainicio, datafim;
+	private Categoria categoria;
+	private List<Grupo> grupos;
+	private int numero;
 	
 	
 	public Date getDatainicio() 

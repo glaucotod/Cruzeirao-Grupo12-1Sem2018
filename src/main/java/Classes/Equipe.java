@@ -14,6 +14,7 @@ public class Equipe implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int Idequipe;
 	private String nome,cidade;
 	private Date datafundacao;
 	private List<Usuario> diretores;

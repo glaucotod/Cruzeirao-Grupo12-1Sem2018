@@ -2,9 +2,27 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
 			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="Cruzeirao">
+	<persistence-unit name="Cruzeirao" transaction-type="RESOURCE_LOCAL">
+		<class>Classes.Campeonato</class>
+		<class>Classes.Cartao</class>
+		<class>Classes.Categoria</class>
+		<class>Classes.Equipe</class>
+		<class>Classes.Fase</class>
+		<class>Classes.Gol</class>
+		<class>Classes.Grupo</class>
+		<class>Classes.Inscricao</class>
+		<class>Classes.Inscrito</class>
+		<class>Classes.Juiz</class>
+		<class>Classes.Local</class>
+		<class>Classes.Partida</class>
+		<class>Classes.PartidaFutebol</class>
+		<class>Classes.Rodada</class>
+		<class>Classes.Usuario</class>
 		<properties>
-			
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DBTeste;create=true"/>
+			<property name="javax.persistence.jdbc.user" value="app"/>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
 		</properties>
 	</persistence-unit>
 </persistence>

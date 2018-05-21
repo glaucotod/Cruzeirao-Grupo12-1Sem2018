@@ -9,22 +9,21 @@
 	
 	<ui:define name="principal">
 	<body background="C:\Users\Lucas\git\Cruzeirao\src\main\webapp\pages\cruzeir.jpg">
-		<h:form id="formIndex">
+		<h:form id="formLogin">
 			
-			<p:panelGrid columns="6">
+			<p:panelGrid columns="2" >
 			
-			<p:commandButton value="Home"/>
-			<p:commandButton value="Classificação"/>
-			<p:commandButton value="Proxima Rodada"/>
-			<p:commandButton value="Categorias"/>
-			<p:commandButton value="Inscrição"/>
-			<p:commandButton value="Login"/>	
-			
+			<p:commandButton value="Usuário"/>
+			<p:inputText value=""/>
+			<p:commandButton value="Senha"/>
+			<p:inputText value=""/>			
+			</p:panelGrid>
+			<p:panelGrid columns = "2">
+			<p:commandButton value="OK" update=":formLogin" />
+			<p:commandButton value="Esqueci a Senha" update=":formLogin" />
 			</p:panelGrid>
 			
-			
-			
 		</h:form>
-		</body>
+	</body>
  </ui:define>
 </ui:composition>

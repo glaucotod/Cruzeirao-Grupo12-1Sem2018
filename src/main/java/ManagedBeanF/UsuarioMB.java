@@ -8,7 +8,6 @@ import javax.faces.bean.SessionScoped;
 import Classes.Usuario;
 
 
-
 @ManagedBean
 @SessionScoped
 

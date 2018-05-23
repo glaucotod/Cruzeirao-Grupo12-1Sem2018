@@ -1,0 +1,29 @@
+<ui:composition template="padrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="principal">
+	<body background="C:\Users\Lucas\git\Cruzeirao\src\main\webapp\pages\cruzeir.jpg">
+		<h:form id="formLogin">
+			
+			<p:panelGrid columns="2" >
+			
+			<p:commandButton value="Usuário"/>
+			<p:inputText value=""/>
+			<p:commandButton value="Senha"/>
+			<p:inputText value=""/>			
+			</p:panelGrid>
+			<p:panelGrid columns = "2">
+			<p:commandButton value="OK" update=":formLogin" />
+			<p:commandButton value="Esqueci a Senha" update=":formLogin" />
+			</p:panelGrid>
+			
+		</h:form>
+	</body>
+ </ui:define>
+</ui:composition>

@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Equipe implements Serializable
 {
-	private static final String TemporalType = null;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int Idequipe;

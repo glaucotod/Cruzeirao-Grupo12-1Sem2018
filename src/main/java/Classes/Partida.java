@@ -14,14 +14,14 @@ public class Partida
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int numero;
-	Inscricao equipemandante, equipevisitante;
-	Date data;
-	Local local;
-	Partida proxpartida;
-	List<Juiz> juizes;
-	Grupo grupo;
-	String relatojuiz;
+	private int numero;
+	private Inscricao equipemandante, equipevisitante;
+	private Date data;
+	private Local local;
+	private Partida proxpartida;
+	private List<Juiz> juizes;
+	private Grupo grupo;
+	private String relatojuiz;
 	
 	
 	public int getNumero() 

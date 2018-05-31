@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 import java.util.Date;
 
@@ -16,6 +19,8 @@ public class Partida
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int numero;
 	private Inscricao equipemandante, equipevisitante;
+	
+	@Temporal(TemporalType.DATE)
 	private Date data;
 	private Local local;
 	private Partida proxpartida;

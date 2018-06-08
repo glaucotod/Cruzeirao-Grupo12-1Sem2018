@@ -1,4 +1,4 @@
-package ManagedBean;
+package managedBean;
 
 
 import javax.persistence.EntityManager;
@@ -36,8 +36,7 @@ public class TimeMB
 			timeDAO.closeEntityManager();
 		}
 		
-		public void remover (Equipe time) // EXCLUSAO DA EQUIPE
-		
+		public void remover (Equipe time) // EXCLUSAO DA EQUIPE		
 		{
 			time = timeDAO.getById(Equipe.class, time.getnome());
 			timeDAO.remove(time);

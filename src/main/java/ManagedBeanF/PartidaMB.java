@@ -1,4 +1,4 @@
-package MenagedBean;
+package MenagedBeanF;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

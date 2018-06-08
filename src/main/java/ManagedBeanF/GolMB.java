@@ -19,7 +19,7 @@ public class GolMB
 	
 	public Gol salvar (Gol gols)
 	{
-		gols = golstDAO.save(gols);
+		gols = golsDAO.save(gols);
 		golsDAO.closeEntityManager();
 		return gols;
 	}

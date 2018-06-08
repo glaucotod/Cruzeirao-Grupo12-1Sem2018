@@ -1,4 +1,4 @@
-package MenagedBean;
+package MenagedBeanF;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -13,7 +13,7 @@ import Classes.Gol;
 @ManagedBean
 @SessionScoped
 
-public class ArtilhariMB
+public class ArtilhariaMB
 {
 	private Partida part = new Partida();
 	private PartidaFutebol partf = new PartidaFutebol();

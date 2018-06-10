@@ -1,9 +1,18 @@
 package Classes;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Inscrito 
 {
-	boolean aceiteusuario,suspensojogos,inscricaovalidada;
-	Usuario Usuario;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int idInscrito;
+	private boolean aceiteusuario,suspensojogos,inscricaovalidada;
+	private Usuario Usuario;
 	
 	
 	public boolean isAceiteusuario() 

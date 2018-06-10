@@ -8,16 +8,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Fase implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Date datainicio, datafim;
-	Categoria categoria;
-	List<Grupo> grupos;
-	int numero;
+	private int Idfase;
+	
+	@Temporal(TemporalType.DATE)
+	private Date datainicio, datafim;
+	private Categoria categoria;
+	private List<Grupo> grupos;
+	private int numero;
 	
 	
 	public Date getDatainicio() 

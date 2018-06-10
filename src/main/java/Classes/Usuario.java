@@ -1,14 +1,28 @@
 package Classes;
 
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import java.util.Date;
 
+@Entity
 public class Usuario 
 {
-	String nome, email, telefonefixo,telefonemovel,endereco,rg,cpf,cref,foto;
-	Date datanascimento;
-	List<Equipe> equipes;
-	List<Inscrito> inscricoes;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int idUsuario;
+	private String nome, email, telefonefixo,telefonemovel,endereco,rg,cpf,cref,foto;
+	
+	@Temporal(TemporalType.DATE)
+	private Date datanascimento;
+	private List<Equipe> equipes;
+	private List<Inscrito> inscricoes;
 	
 	
 	public String getNome() 

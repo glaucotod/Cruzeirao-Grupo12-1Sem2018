@@ -1,18 +1,32 @@
 package Classes;
 
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
 import java.util.Date;
 
+@Entity
 public class Partida 
 {
-	int numero;
-	Inscricao equipemandante, equipevisitante;
-	Date data;
-	Local local;
-	Partida proxpartida;
-	List<Juiz> juizes;
-	Grupo grupo;
-	String relatojuiz;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int numero;
+	private Inscricao equipemandante, equipevisitante;
+	
+	@Temporal(TemporalType.DATE)
+	private Date data;
+	private Local local;
+	private Partida proxpartida;
+	private List<Juiz> juizes;
+	private Grupo grupo;
+	private String relatojuiz;
 	
 	
 	public int getNumero() 

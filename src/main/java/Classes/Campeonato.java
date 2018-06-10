@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Campeonato implements Serializable
@@ -18,6 +20,7 @@ public class Campeonato implements Serializable
 	private List<Local> locais;
 	private List<Juiz> juizes;
 	private List<Categoria> categorias;
+	@Temporal(TemporalType.DATE)
 	private Date datainicioinscricao, datafiminscricao, datainiciocampeonato, datafimcampeonato;
 	private double valortaxa;
 	

@@ -32,7 +32,15 @@ public class Usuario
 	@ManyToMany
 	private List<Campeonato> campeonatos;
 	
+	public int getId() 
+	{
+		return idUsuario;
+	}
 	
+	public void setId(int idUsuario) 
+	{
+		this.idUsuario = idUsuario;
+	}
 	
 	public String getNome() 
 	{

@@ -1,6 +1,7 @@
 package ManagedBean;
 
 import Classes.Campeonato;
+import system.dao.CampDAO;
 
 import java.util.List;
 
@@ -16,28 +17,28 @@ public class CampeonatoMB {
 	
 	public Campeonato salvar(Campeonato camp)
 	{
-		camp = campDAO.save(camp);
-		campDAO.closeEntityManager();
+		camp = CampDAO.save(camp);
+		CampDAO.closeEntityManager();
 		return camp;
 	}
 	
 	public List<Campeonato> getCamp(){
-		List <Campeonato> lista = campDAO.getall(Campeonato.class);
-		campDAO.closeEntityManager();
+		List <Campeonato> lista = CampDAO.getall(Campeonato.class);
+		CampDAO.closeEntityManager();
 		return lista;
 	}
 	
 	public void alterar (Campeonato camp)
 	{
-		campDAO.save(camp);
-		campDAO.closeEntityManager();
+		CampDAO.save(camp);
+		CampDAO.closeEntityManager();
 	}
 	
 	public void remover (Campeonato camp) // EXCLUSÃO DO CAMPEONATO
 	{
-		camp = campDAO.getById(Campeonato.class, camp.getNome());
-		campDAO.remove(camp);
-		campDAO.closeEntityManager();
+		camp = CampDAO.getById(Campeonato.class, camp.getNome());
+		CampDAO.remove(camp);
+		CampDAO.closeEntityManager();
 	}
 
 }

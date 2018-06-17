@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import Classes.Gol;
+import system.dao.GolsDAO;
 
 
 @ManagedBean
@@ -19,29 +20,29 @@ public class GolMB
 	
 	public Gol salvar (Gol gols)
 	{
-		gols = golsDAO.save(gols);
-		golsDAO.closeEntityManager();
+		gols = GolsDAO.save(gols);
+		GolsDAO.closeEntityManager();
 		return gols;
 	}
 	
 	public List<Gol> getGol()
 	{
-		List <Gol> list = golsDAO.getall(Gol.class);
-		golsDAO.closeEntityManager();
+		List <Gol> list = GolsDAO.getall(Gol.class);
+		GolsDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Gol gols)
 	{
-		golsDAO.save(gols);
-		golsDAO.closeEntityManager();
+		GolsDAO.save(gols);
+		GolsDAO.closeEntityManager();
 	}
 	
 	public void remover (Gol gols)
 	{
-		gols = golsDAO.getById(Gol.class, gols.getInscrito());
-		golsDAO.remove(gols);
-		golsDAO.closeEntityManager();
+		gols = GolsDAO.getById(Gol.class, gols.getInscrito());
+		GolsDAO.remove(gols);
+		GolsDAO.closeEntityManager();
 	}
 	
 }

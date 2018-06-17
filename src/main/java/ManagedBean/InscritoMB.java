@@ -5,6 +5,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Inscrito;
+import system.dao.InscDAO;
 
 @ManagedBean
 @SessionScoped
@@ -15,28 +16,28 @@ private Inscrito insc = new Inscrito();
 	
 	public Inscrito salvar(Inscrito insc)
 	{
-		insc = inscDAO.save(insc);
-		inscDAO.closeEntityManager();
+		insc = InscDAO.save(insc);
+		InscDAO.closeEntityManager();
 		return insc;
 	}
 	
 	public List<Inscrito> getCamp(){
-		List <Inscrito> lista = inscDAO.getall(Inscrito.class);
-		inscDAO.closeEntityManager();
+		List <Inscrito> lista = InscDAO.getall(Inscrito.class);
+		InscDAO.closeEntityManager();
 		return lista;
 	}
 	
 	public void alterar (Inscrito camp)
 	{
-		inscDAO.save(camp);
-		inscDAO.closeEntityManager();
+		InscDAO.save(camp);
+		InscDAO.closeEntityManager();
 	}
 	
 	public void remover (Inscrito camp) // EXCLUSÃO DO CAMPEONATO
 	{
-		insc = inscDAO.getById(Inscrito.class, insc.getNome());
-		inscDAO.remove(camp);
-		inscDAO.closeEntityManager();
+		insc = InscDAO.getById(Inscrito.class, insc.getNome());
+		InscDAO.remove(camp);
+		InscDAO.closeEntityManager();
 	}
 
 	public Inscrito getInscrito() {

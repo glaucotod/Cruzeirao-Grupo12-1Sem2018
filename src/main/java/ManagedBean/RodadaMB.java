@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Rodada;
+import system.dao.RodDAO;
 
 
 @ManagedBean
@@ -18,29 +19,29 @@ public class RodadaMB
 	
 	public Rodada salvar (Rodada rod)
 	{
-		rod = rodDAO.save(rod);
-		rodDAO.closeEntityManager();
+		rod = RodDAO.save(rod);
+		RodDAO.closeEntityManager();
 		return rod;
 	}
 	
-	public List<Rodada>> getRodada()
+	public List<Rodada> getRodada()
 	{
-		List <Rodada> list = rodDAO.getall(Rodada.class);
-		rodDAO.closeEntityManager();
+		List <Rodada> list = RodDAO.getall(Rodada.class);
+		RodDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Rodada rod)
 	{
-		rodDAO.save(rod);
-		rodDAO.closeEntityManager();
+		RodDAO.save(rod);
+		RodDAO.closeEntityManager();
 	}
 	
 	public void remover (Rodada rod)
 	{
-		rod = rodDAO.getById(Rodada.class, rod.getNumero());
-		rodDAO.remove(rod);
-		rodDAO.closeEntityManager();
+		rod = RodDAO.getById(Rodada.class, rod.getNumero());
+		RodDAO.remove(rod);
+		RodDAO.closeEntityManager();
 	}
 	
 }

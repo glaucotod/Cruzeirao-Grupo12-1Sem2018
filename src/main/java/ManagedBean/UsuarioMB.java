@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Usuario;
+import system.dao.UserDAO;
 
 
 @ManagedBean
@@ -17,29 +18,29 @@ public class UsuarioMB
 	
 	public Usuario salvar (Usuario user)
 	{
-		user = userDAO.save(user);
-		userDAO.closeEntityManager();
+		user = UserDAO.save(user);
+		UserDAO.closeEntityManager();
 		return user;
 	}
 	
 	public List<Usuario> getUsuario()
 	{
-		List <Usuario> list = userDAO.getall(Usuario.class);
-		userDAO.closeEntityManager();
+		List <Usuario> list = UserDAO.getall(Usuario.class);
+		UserDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Usuario user)
 	{
-		userDAO.save(user);
-		userDAO.closeEntityManager();
+		UserDAO.save(user);
+		UserDAO.closeEntityManager();
 	}
 	
 	public void remover (Usuario user)
 	{
-		user = userDAO.getById(Usuario.class, user.getId());
-		userDAO.remove(user);
-		userDAO.closeEntityManager();
+		user = UserDAO.getById(Usuario.class, user.getId());
+		UserDAO.remove(user);
+		UserDAO.closeEntityManager();
 	}
 	
 }

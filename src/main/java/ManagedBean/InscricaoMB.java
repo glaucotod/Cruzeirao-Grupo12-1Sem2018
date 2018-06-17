@@ -29,16 +29,16 @@ public class InscricaoMB {
 	
 	public Inscricao salvar(Inscricao incricao)
 	{
-		listaDAO.save(inscricao);
+		ListaDAO.save(inscricao);
 		inscricao.closeEntityManager();
 		return inscricao;
 	}
 	
 	public void remover(Inscricao inscricao)
 	{
-		lista = listaDAO.getById(Inscricao.class, lista.getNumero());
-		listaDAO.remove(lista);
-		listaDAO.closeEntityManager();
+		lista = ListaDAO.getById(Inscricao.class, lista.getNumero());
+		ListaDAO.remove(lista);
+		ListaDAO.closeEntityManager();
 	}	
 	
 	

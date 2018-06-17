@@ -7,6 +7,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Partida;
 import Classes.PartidaFutebol;
+import system.dao.GolsDAO;
+import system.dao.PartDAO;
+import system.dao.PartfDAO;
 import Classes.Gol;
 
 
@@ -21,83 +24,83 @@ public class ArtilhariaMB
 	
 	public Partida salvar (Partida part)
 	{
-		part = partDAO.save(part);
-		partDAO.closeEntityManager();
+		part = PartDAO.save(part);
+		PartDAO.closeEntityManager();
 		return part;
 	}
 	
 	public List<Partida> getPartida()
 	{
-		List <Partida> list = partDAO.getall(Partida.class);
-		partDAO.closeEntityManager();
+		List <Partida> list = PartDAO.getall(Partida.class);
+		PartDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Partida part)
 	{
-		partDAO.save(part);
-		partDAO.closeEntityManager();
+		PartDAO.save(part);
+		PartDAO.closeEntityManager();
 	}
 	
 	public void remover (Partida part)
 	{
-		part = partDAO.getById(Partida.class, part.getNumero());
-		partDAO.remove(part);
-		partDAO.closeEntityManager();
+		part = PartDAO.getById(Partida.class, part.getNumero());
+		PartDAO.remove(part);
+		PartDAO.closeEntityManager();
 	}
 	
 	public PartidaFutebol salvar (PartidaFutebol partf)
 	{
-		partf = partfDAO.save(partf);
-		partfDAO.closeEntityManager();
+		partf = PartfDAO.save(partf);
+		PartfDAO.closeEntityManager();
 		return partf;
 	}
 	
 	public List<PartidaFutebol> getPartidaFutebol()
 	{
-		List <PartidaFutebol> list = partfDAO.getall(PartidaFutebol.class);
-		partfDAO.closeEntityManager();
+		List <PartidaFutebol> list = PartfDAO.getall(PartidaFutebol.class);
+		PartfDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (PartidaFutebol partf)
 	{
-		partfDAO.save(partf);
-		partfDAO.closeEntityManager();
+		PartfDAO.save(partf);
+		PartfDAO.closeEntityManager();
 	}
 	
 	public void remover (PartidaFutebol partf)
 	{
-		partf = partfDAO.getById(PartidaFutebol.class, partf.getNumero());
-		partfDAO.remove(partf);
-		partfDAO.closeEntityManager();
+		partf = PartfDAO.getById(PartidaFutebol.class, partf.getNumero());
+		PartfDAO.remove(partf);
+		PartfDAO.closeEntityManager();
 	}
 	
 	public Gol salvar (Gol gols)
 	{
 		gols = golstDAO.save(gols);
-		golsDAO.closeEntityManager();
+		GolsDAO.closeEntityManager();
 		return gols;
 	}
 	
 	public List<Gol> getGol()
 	{
-		List <Gol> list = golsDAO.getall(Gol.class);
-		golsDAO.closeEntityManager();
+		List <Gol> list = GolsDAO.getall(Gol.class);
+		GolsDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Gol gols)
 	{
-		golsDAO.save(gols);
-		golsDAO.closeEntityManager();
+		GolsDAO.save(gols);
+		GolsDAO.closeEntityManager();
 	}
 	
 	public void remover (Gol gols)
 	{
-		gols = golsDAO.getById(Gol.class, gols.getInscrito);
-		golsDAO.remove(gols);
-		golsDAO.closeEntityManager();
+		gols = GolsDAO.getById(Gol.class, gols.getInscrito());
+		GolsDAO.remove(gols);
+		GolsDAO.closeEntityManager();
 	}
 	
 	

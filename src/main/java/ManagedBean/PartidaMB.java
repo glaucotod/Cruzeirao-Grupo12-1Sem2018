@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Partida;
 import Classes.PartidaFutebol;
+import system.dao.PartDAO;
 
 
 @ManagedBean
@@ -19,29 +20,29 @@ public class PartidaMB
 	
 	public Partida salvar (Partida part)
 	{
-		part = partDAO.save(part);
-		partDAO.closeEntityManager();
+		part = PartDAO.save(part);
+		PartDAO.closeEntityManager();
 		return part;
 	}
 	
 	public List<Partida> getPartida()
 	{
-		List <Partida> list = partDAO.getall(Partida.class);
-		partDAO.closeEntityManager();
+		List <Partida> list = PartDAO.getall(Partida.class);
+		PartDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Partida part)
 	{
-		partDAO.save(part);
-		partDAO.closeEntityManager();
+		PartDAO.save(part);
+		PartDAO.closeEntityManager();
 	}
 	
 	public void remover (Partida part)
 	{
-		part = partDAO.getById(Partida.class, part.getNumero());
-		partDAO.remove(part);
-		partDAO.closeEntityManager();
+		part = PartDAO.getById(Partida.class, part.getNumero());
+		PartDAO.remove(part);
+		PartDAO.closeEntityManager();
 	}
 	
 	public PartidaFutebol salvar (PartidaFutebol partf)

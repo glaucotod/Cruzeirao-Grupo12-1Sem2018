@@ -17,28 +17,28 @@ public class TimeMB
 		
 		public Equipe salvar (Equipe time)
 		{
-			time = timeDAO.save(time);
-			timeDAO.closeEntityManager();
+			time = TimeDAO.save(time);
+			TimeDAO.closeEntityManager();
 			return time;
 		}
 		
 		public List<Equipe> getTime()
 		{
-			List <Equipe> list = timeDAO.getall(Equipe.class);
-			timeDAO.closeEntityManager();
+			List <Equipe> list = TimeDAO.getall(Equipe.class);
+			TimeDAO.closeEntityManager();
 			return list;
 		}
 		
 		public void alterar (Equipe time)
 		{
-			timeDAO.save(time);
-			timeDAO.closeEntityManager();
+			TimeDAO.save(time);
+			TimeDAO.closeEntityManager();
 		}
 		
 		public void remover (Equipe time)
 		{
-			time = timeDAO.getById(Equipe.class, time.getNome());
-			timeDAO.remove(time);
-			timeDAO.closeEntityManager();
+			time = TimeDAO.getById(Equipe.class, time.getNome());
+			TimeDAO.remove(time);
+			TimeDAO.closeEntityManager();
 		}
 }

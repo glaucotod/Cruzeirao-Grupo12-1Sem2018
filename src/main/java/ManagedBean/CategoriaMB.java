@@ -17,28 +17,28 @@ public class CategoriaMB {
 		
 		public Categoria salvar(Categoria cat)
 		{
-			cat = catDAO.save(cat);
+			cat = CatDAO.save(cat);
 			cat.closeEntityManager();
 			return cat;			
 		}
 		
 		public void remover(Categoria cat)
 		{
-			cat = catDAO.getall(Categoria.class);
-			catDAO.remove(cat);
-			catDAO.closeEntityManager();			
+			cat = CatDAO.getall(Categoria.class);
+			CatDAO.remove(cat);
+			CatDAO.closeEntityManager();			
 		}
 		
 		public List<Categoria> getCategoria(){
-			List <Campeonato> lista = catDAO.getall(Campeonato.class);
-			catDAO.closeEntityManager();
+			List <Campeonato> lista = CatDAO.getall(Campeonato.class);
+			CatDAO.closeEntityManager();
 			return lista();
 		}
 		
 		public void alterar(Categoria cat)
 		{
-			catDAO.save(cat);
-			catDAO.closeEntiyManager();
+			CatDAO.save(cat);
+			CatDAO.closeEntiyManager();
 		}
 		
 }

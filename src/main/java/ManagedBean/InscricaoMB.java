@@ -1,4 +1,4 @@
-package managedBean;
+package ManagedBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class InscricaoMB {
 	public void remover(Inscricao inscricao)
 	{
 		lista = listaDAO.getById(Inscricao.class, lista.getNumero());
-		listaDAO.remove(lista)
+		listaDAO.remove(lista);
 		listaDAO.closeEntityManager();
 	}	
 	

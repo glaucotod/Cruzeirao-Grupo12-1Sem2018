@@ -37,7 +37,7 @@ public class TimeMB
 		
 		public void remover (Equipe time)
 		{
-			time = timeDAO.getById(Equipe.class, time.getnome());
+			time = timeDAO.getById(Equipe.class, time.getNome());
 			timeDAO.remove(time);
 			timeDAO.closeEntityManager();
 		}

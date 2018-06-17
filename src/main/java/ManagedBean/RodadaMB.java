@@ -1,4 +1,4 @@
-package MenagedBeanF;
+package ManagedBean;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -38,7 +38,7 @@ public class RodadaMB
 	
 	public void remover (Rodada rod)
 	{
-		rod = rodDAO.getById(Rodada.class, rod.getNumero));
+		rod = rodDAO.getById(Rodada.class, rod.getNumero());
 		rodDAO.remove(rod);
 		rodDAO.closeEntityManager();
 	}

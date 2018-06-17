@@ -1,4 +1,4 @@
-package managedBean;
+package ManagedBean;
 
 import Classes.Campeonato;
 import Classes.Categoria;

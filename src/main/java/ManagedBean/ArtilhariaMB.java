@@ -1,4 +1,4 @@
-package MenagedBeanF;
+package ManagedBean;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -95,7 +95,7 @@ public class ArtilhariaMB
 	
 	public void remover (Gol gols)
 	{
-		gols = golsDAO.getById(Gol.class, gols.getInscrito));
+		gols = golsDAO.getById(Gol.class, gols.getInscrito);
 		golsDAO.remove(gols);
 		golsDAO.closeEntityManager();
 	}

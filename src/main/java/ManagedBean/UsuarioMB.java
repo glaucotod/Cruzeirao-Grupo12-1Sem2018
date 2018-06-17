@@ -37,7 +37,7 @@ public class UsuarioMB
 	
 	public void remover (Usuario user)
 	{
-		user = userDAO.getById(Usuario.class, user.getIdUsuario());
+		user = userDAO.getById(Usuario.class, user.getId());
 		userDAO.remove(user);
 		userDAO.closeEntityManager();
 	}

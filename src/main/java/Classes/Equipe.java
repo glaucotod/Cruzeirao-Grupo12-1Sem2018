@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,6 +23,7 @@ public class Equipe implements Serializable
 	
 	@Temporal(TemporalType.DATE)
 	private Date datafundacao;
+	@ManyToMany
 	private List<Usuario> diretores;
 	
 	public String getNome() 

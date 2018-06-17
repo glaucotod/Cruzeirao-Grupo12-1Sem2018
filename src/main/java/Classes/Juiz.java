@@ -10,7 +10,8 @@ public class Juiz
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Usuario usuario;
+	private Usuario usuario;
+	private Enum tipo;
 
 	public Usuario getUsuario() 
 	{

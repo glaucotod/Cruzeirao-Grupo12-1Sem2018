@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Categoria implements Serializable
@@ -15,7 +18,9 @@ public class Categoria implements Serializable
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nome;
 	private int nascidosapartirde, minjogadores, maxjogadores, atribute74;
+	@OneToMany
 	private List<Inscricao> inscricoes;
+	@ManyToMany
 	private List<Fase> fases;
 	private Campeonato campeonato;
 	

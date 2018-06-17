@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Inscricao implements Serializable
@@ -15,8 +17,10 @@ public class Inscricao implements Serializable
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long numero;
 	private boolean pagamento, validada;
+	@ManyToMany
 	private List<Inscrito> inscritos;
 	private Categoria categoria;
+	@ManyToMany
 	private List<Partida> partidas;
 	
 	public long getNumero() {

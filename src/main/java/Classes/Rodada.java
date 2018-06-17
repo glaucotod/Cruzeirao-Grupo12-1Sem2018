@@ -6,16 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Rodada 
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int numero;
-	Grupo grupo;
-	List<Partida> partidas;
-	
+	private int numero;
+	private Grupo grupo;
+	@ManyToMany
+	private List<Partida> partidas;
 	
 	public int getNumero() 
 	{

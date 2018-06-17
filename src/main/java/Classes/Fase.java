@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -21,6 +22,7 @@ public class Fase implements Serializable
 	@Temporal(TemporalType.DATE)
 	private Date datainicio, datafim;
 	private Categoria categoria;
+	@ManyToMany
 	private List<Grupo> grupos;
 	private int numero;
 	

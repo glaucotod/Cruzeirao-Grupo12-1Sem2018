@@ -6,8 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.ManyToAny;
 
 import java.util.Date;
 
@@ -21,8 +25,13 @@ public class Usuario
 	
 	@Temporal(TemporalType.DATE)
 	private Date datanascimento;
+	@ManyToMany  
 	private List<Equipe> equipes;
+	@OneToMany
 	private List<Inscrito> inscricoes;
+	@ManyToMany
+	private List<Campeonato> campeonatos;
+	
 	
 	
 	public String getNome() 

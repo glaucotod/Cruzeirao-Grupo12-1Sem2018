@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,6 +25,7 @@ public class Partida
 	private Date data;
 	private Local local;
 	private Partida proxpartida;
+	@ManyToMany
 	private List<Juiz> juizes;
 	private Grupo grupo;
 	private String relatojuiz;

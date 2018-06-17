@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Grupo implements Serializable
@@ -15,6 +16,7 @@ public class Grupo implements Serializable
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nome;
 	private Fase fase;
+	@ManyToMany
 	private List<Rodada> rodadas;
 	private int numero;
 		

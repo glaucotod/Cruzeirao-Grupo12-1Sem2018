@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class PartidaFutebol 
@@ -13,8 +14,18 @@ public class PartidaFutebol
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idPartidaFutebol;
-	private List<Gol> golsmandante, golsvisitantes, golspenaltesmandantes, golspenaltesvisitantes;
-	private List<Cartao> cartoesmandante, cartoesvisitantes;
+	@ManyToMany
+	private List<Gol> golsmandante;
+	@ManyToMany
+	private List<Gol> golsvisitantes;
+	@ManyToMany
+	private List<Gol> golspenaltesmandantes;
+	@ManyToMany
+	private List<Gol> golspenaltesvisitantes;
+	@ManyToMany
+	private List<Cartao> cartoesmandante; 
+	@ManyToMany
+	private List<Cartao> cartoesvisitantes;
 	
 	
 	public List<Gol> getGolsmandante() 

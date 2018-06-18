@@ -1,6 +1,5 @@
 package sistema.service;
 
-import Classes.Campeonato;
 import Classes.Categoria;
 import sistema.daos.CatDAO;
 

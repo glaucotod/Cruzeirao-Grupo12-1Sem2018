@@ -10,18 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import system.dao.CampDAO;
 
+@SuppressWarnings({ "serial", "unused" })
 @Entity
-public class Categoria implements Serializable
+public class Categoria extends Campeonato implements Serializable
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nome;
 	private int nascidosapartirde, minjogadores, maxjogadores, atribute74;
 	@OneToMany
 	private List<Inscricao> inscricoes;
-	@ManyToMany
+	@OneToMany(mappedBy="categoria")
 	private List<Fase> fases;
+	@ManyToOne
 	private Campeonato campeonato;
 	
 	

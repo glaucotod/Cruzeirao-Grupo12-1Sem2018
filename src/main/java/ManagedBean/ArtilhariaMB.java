@@ -18,8 +18,11 @@ import Classes.Gol;
 
 public class ArtilhariaMB
 {
+	@SuppressWarnings("unused")
 	private Partida part = new Partida();
+	@SuppressWarnings("unused")
 	private PartidaFutebol partf = new PartidaFutebol();
+	@SuppressWarnings("unused")
 	private Gol gols = new Gol();
 	
 	public Partida salvar (Partida part)
@@ -58,7 +61,7 @@ public class ArtilhariaMB
 	
 	public List<PartidaFutebol> getPartidaFutebol()
 	{
-		List <PartidaFutebol> list = PartfDAO.getall(PartidaFutebol.class);
+		List <PartidaFutebol> list = PartfDAO.getAll(PartidaFutebol.class);
 		PartfDAO.closeEntityManager();
 		return list;
 	}

@@ -3,18 +3,16 @@ package Classes;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@SuppressWarnings("serial")
 @Entity
 public class Campeonato implements Serializable
 {
@@ -23,9 +21,8 @@ public class Campeonato implements Serializable
 	private String nome;
 	@ManyToMany
 	private List<Local> locais;
-	@ManyToMany
 	private List<Juiz> juizes;
-	@ManyToMany
+	@OneToMany(mappedBy="campeonato")
 	private List<Categoria> categorias;
 	
 	@Temporal(TemporalType.DATE)

@@ -4,16 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+@SuppressWarnings("serial")
 @Entity
-public class Grupo implements Serializable
+public class Grupo extends Fase implements Serializable
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nome;
 	private Fase fase;
 	@ManyToMany

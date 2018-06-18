@@ -1,18 +1,12 @@
 package Classes;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
-public class Inscrito 
+public class Inscrito extends Usuario
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idInscrito;
 	private boolean aceiteusuario,suspensojogos,inscricaovalidada;
-	private Usuario Usuario;
+	private Usuario usuario;
 	
 	
 	public boolean isAceiteusuario() 
@@ -50,12 +44,12 @@ public class Inscrito
 	
 	public Usuario getUsuario() 
 	{
-		return Usuario;
+		return usuario;
 	}
 	
 	public void setUsuario(Usuario usuario) 
 	{
-		Usuario = usuario;
+		this.usuario = usuario;
 	}
 	
 }

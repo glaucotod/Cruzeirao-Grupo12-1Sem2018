@@ -14,7 +14,7 @@ public abstract class DAOImpl <T, I extends Serializable> {
     
      public DAOImpl() {
     	
-    	emf = Persistence.createEntityManagerFactory("Cruzeirao");
+    	emf = Persistence.createEntityManagerFactory("cruzeirao");
 
 	}
 

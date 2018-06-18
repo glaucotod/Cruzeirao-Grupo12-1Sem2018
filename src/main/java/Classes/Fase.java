@@ -5,22 +5,18 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@SuppressWarnings("serial")
 @Entity
-public class Fase implements Serializable
-{
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int Idfase;
-	
+public class Fase extends Categoria implements Serializable
+{	
 	@Temporal(TemporalType.DATE)
 	private Date datainicio, datafim;
+	@ManyToOne
 	private Categoria categoria;
 	@ManyToMany
 	private List<Grupo> grupos;

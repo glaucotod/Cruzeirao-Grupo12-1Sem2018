@@ -4,21 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+@SuppressWarnings("serial")
 @Entity
-public class Inscricao implements Serializable
+public class Inscricao extends Inscrito implements Serializable
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long numero;
 	private boolean pagamento, validada;
 	@ManyToMany
 	private List<Inscrito> inscritos;
+	@ManyToOne
 	private Categoria categoria;
 	@ManyToMany
 	private List<Partida> partidas;

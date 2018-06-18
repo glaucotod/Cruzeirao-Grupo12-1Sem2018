@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.ManyToAny;
 
 import java.util.Date;
 
@@ -25,9 +24,9 @@ public class Usuario
 	
 	@Temporal(TemporalType.DATE)
 	private Date datanascimento;
-	@ManyToMany  
+	@ManyToMany(mappedBy="diretores")
 	private List<Equipe> equipes;
-	@OneToMany
+	@OneToMany(mappedBy="usuario")
 	private List<Inscrito> inscricoes;
 	@ManyToMany
 	private List<Campeonato> campeonatos;

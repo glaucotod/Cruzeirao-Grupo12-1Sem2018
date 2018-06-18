@@ -3,18 +3,13 @@ package Classes;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+@SuppressWarnings("serial")
 @Entity
-public class Cartao implements Serializable
+public class Cartao extends Inscrito implements Serializable
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Inscrito inscrito;
 	private int tempo;
-	
 	
 	public Inscrito getInscrito() 
 	{
@@ -36,6 +31,4 @@ public class Cartao implements Serializable
 	{
 		this.tempo = tempo;
 	}
-	
-	
 }

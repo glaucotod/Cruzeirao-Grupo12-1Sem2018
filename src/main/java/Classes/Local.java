@@ -1,15 +1,11 @@
 package Classes;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 @Entity
-public class Local 
+public class Local extends Partida
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	String endereco;
 
 	public String getEndereco() 

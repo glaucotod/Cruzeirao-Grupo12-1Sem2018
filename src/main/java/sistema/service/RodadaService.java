@@ -3,8 +3,6 @@ package sistema.service;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import Classes.Rodada;
 import sistema.daos.RodDAO;
 

@@ -25,6 +25,11 @@ public class Equipe implements Serializable
 	@ManyToMany
 	private List<Usuario> diretores;
 	
+	public int getIdequipe()
+	{
+		return this.Idequipe;
+	}
+	
 	public String getNome() 
 	{
 		return nome;

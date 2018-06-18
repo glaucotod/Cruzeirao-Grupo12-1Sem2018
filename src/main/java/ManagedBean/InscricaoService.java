@@ -1,4 +1,4 @@
-package sistema.service;
+package ManagedBean;
 
 import java.util.ArrayList;
 import java.util.List;

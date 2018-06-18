@@ -2,43 +2,39 @@ package sistema.service;
 
 import Classes.Campeonato;
 import Classes.Categoria;
+import sistema.daos.CatDAO;
 
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
-@ManagedBean
-@SessionScoped
+public class CategoriaService {
 
-public class CategoriaMB {
-
-		private Categoria cat = new Categoria();
+		CatDAO catDAO = new CatDAO();
 		
 		public Categoria salvar(Categoria cat)
 		{
-			cat = CatDAO.save(cat);
-			cat.closeEntityManager();
+			cat = catDAO.save(cat);
+			catDAO.closeEntityManager();
 			return cat;			
 		}
 		
 		public void remover(Categoria cat)
 		{
-			cat = CatDAO.getall(Categoria.class);
-			CatDAO.remove(cat);
-			CatDAO.closeEntityManager();			
+			cat = catDAO.getById(Categoria.class, cat.getId());
+			catDAO.remove(cat);
+			catDAO.closeEntityManager();			
 		}
 		
 		public List<Categoria> getCategoria(){
-			List <Campeonato> lista = CatDAO.getall(Campeonato.class);
-			CatDAO.closeEntityManager();
-			return lista();
+			List <Categoria> lista = catDAO.getAll(Categoria.class);
+			catDAO.closeEntityManager();
+			return lista;
 		}
 		
 		public void alterar(Categoria cat)
 		{
-			CatDAO.save(cat);
-			CatDAO.closeEntiyManager();
+			catDAO.save(cat);
+			catDAO.closeEntityManager();
 		}
 		
 }

@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 
 @SuppressWarnings("serial")
 @Entity
-public class Gol extends Usuario implements Serializable
+public class Gol extends Inscrito implements Serializable
 {
 	private Inscrito inscrito;
 	private int tempo;

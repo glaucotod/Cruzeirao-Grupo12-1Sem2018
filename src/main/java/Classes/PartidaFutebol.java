@@ -9,11 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class PartidaFutebol 
+public class PartidaFutebol extends Partida
 {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idPartidaFutebol;
 	@ManyToMany
 	private List<Gol> golsmandante;
 	@ManyToMany

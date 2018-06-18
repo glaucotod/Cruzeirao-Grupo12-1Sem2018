@@ -5,47 +5,37 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Inscrito;
-import system.dao.InscDAO;
+import sistema.daos.InscDAO;
 
-@ManagedBean
-@SessionScoped
 
-public class InscritoMB {
+public class InscritoService {
 	
-private Inscrito insc = new Inscrito();
+	InscDAO inscDAO = new InscDAO();
 	
 	public Inscrito salvar(Inscrito insc)
 	{
-		insc = InscDAO.save(insc);
-		InscDAO.closeEntityManager();
+		insc = inscDAO.save(insc);
+		inscDAO.closeEntityManager();
 		return insc;
 	}
 	
 	public List<Inscrito> getCamp(){
-		List <Inscrito> lista = InscDAO.getall(Inscrito.class);
-		InscDAO.closeEntityManager();
+		List <Inscrito> lista = inscDAO.getAll(Inscrito.class);
+		inscDAO.closeEntityManager();
 		return lista;
 	}
 	
 	public void alterar (Inscrito camp)
 	{
-		InscDAO.save(camp);
-		InscDAO.closeEntityManager();
+		inscDAO.save(camp);
+		inscDAO.closeEntityManager();
 	}
 	
 	public void remover (Inscrito camp) // EXCLUSÃO DO CAMPEONATO
 	{
-		insc = InscDAO.getById(Inscrito.class, insc.getNome());
-		InscDAO.remove(camp);
-		InscDAO.closeEntityManager();
-	}
-
-	public Inscrito getInscrito() {
-		return insc;
-	}
-
-	public void setInscrito(Inscrito insc) {
-		this.insc = insc;
+		camp = inscDAO.getById(Inscrito.class, camp.getId());
+		inscDAO.remove(camp);
+		inscDAO.closeEntityManager();
 	}
 
 }

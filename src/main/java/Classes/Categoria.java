@@ -14,8 +14,11 @@ import sistema.daos.CampDAO;
 
 @SuppressWarnings({ "serial", "unused" })
 @Entity
-public class Categoria extends Campeonato implements Serializable
+public class Categoria implements Serializable
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int IdCat;
 	private String nome;
 	private int nascidosapartirde, minjogadores, maxjogadores, atribute74;
 	@OneToMany
@@ -25,6 +28,10 @@ public class Categoria extends Campeonato implements Serializable
 	@ManyToOne
 	private Campeonato campeonato;
 	
+	public int getId()
+	{
+		return this.IdCat;
+	}
 	
 	public String getNome() 
 	{

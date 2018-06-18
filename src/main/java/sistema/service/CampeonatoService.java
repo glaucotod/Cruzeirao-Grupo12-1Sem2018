@@ -1,44 +1,40 @@
 package sistema.service;
 
 import Classes.Campeonato;
-import system.dao.CampDAO;
+import Classes.Inscrito;
+import sistema.daos.CampDAO;
 
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
-@ManagedBean
-@SessionScoped
-
-public class CampeonatoMB {
+public class CampeonatoService
+{
 	
-	private Campeonato camp = new Campeonato();
+	CampDAO campDAO = new CampDAO();
 	
 	public Campeonato salvar(Campeonato camp)
 	{
-		camp = CampDAO.save(camp);
-		CampDAO.closeEntityManager();
+		camp = campDAO.save(camp);
+		campDAO.closeEntityManager();
 		return camp;
 	}
 	
 	public List<Campeonato> getCamp(){
-		List <Campeonato> lista = CampDAO.getall(Campeonato.class);
-		CampDAO.closeEntityManager();
+		List <Campeonato> lista = campDAO.getAll(Campeonato.class);
+		campDAO.closeEntityManager();
 		return lista;
 	}
 	
 	public void alterar (Campeonato camp)
 	{
-		CampDAO.save(camp);
-		CampDAO.closeEntityManager();
+		campDAO.save(camp);
+		campDAO.closeEntityManager();
 	}
 	
 	public void remover (Campeonato camp) // EXCLUSÃO DO CAMPEONATO
 	{
-		camp = CampDAO.getById(Campeonato.class, camp.getNome());
-		CampDAO.remove(camp);
-		CampDAO.closeEntityManager();
+		camp = campDAO.getById(Campeonato.class, camp.getId());
+		campDAO.remove(camp);
+		campDAO.closeEntityManager();
 	}
 
 }

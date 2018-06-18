@@ -18,6 +18,7 @@ public class Campeonato implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int IdCamp;
 	private String nome;
 	@ManyToMany
 	private List<Local> locais;
@@ -29,6 +30,10 @@ public class Campeonato implements Serializable
 	private Date datainicioinscricao, datafiminscricao, datainiciocampeonato, datafimcampeonato;
 	private double valortaxa;
 	
+	public int getId() 
+	{
+		return IdCamp;
+	}
 	
 	public String getNome() 
 	{

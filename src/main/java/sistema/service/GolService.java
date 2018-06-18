@@ -3,46 +3,40 @@ package sistema.service;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
 import Classes.Gol;
-import system.dao.GolsDAO;
+import sistema.daos.GolsDAO;
 
 
-@ManagedBean
-@SessionScoped
-
-public class GolMB
+public class GolService
 {
 	
-	private Gol gols = new Gol();
+	GolsDAO golsDAO = new GolsDAO();
 	
 	public Gol salvar (Gol gols)
 	{
-		gols = GolsDAO.save(gols);
-		GolsDAO.closeEntityManager();
+		gols = golsDAO.save(gols);
+		golsDAO.closeEntityManager();
 		return gols;
 	}
 	
 	public List<Gol> getGol()
 	{
-		List <Gol> list = GolsDAO.getall(Gol.class);
-		GolsDAO.closeEntityManager();
+		List <Gol> list = golsDAO.getAll(Gol.class);
+		golsDAO.closeEntityManager();
 		return list;
 	}
 	
 	public void alterar (Gol gols)
 	{
-		GolsDAO.save(gols);
-		GolsDAO.closeEntityManager();
+		golsDAO.save(gols);
+		golsDAO.closeEntityManager();
 	}
 	
 	public void remover (Gol gols)
 	{
-		gols = GolsDAO.getById(Gol.class, gols.getInscrito());
-		GolsDAO.remove(gols);
-		GolsDAO.closeEntityManager();
+		gols = golsDAO.getById(Gol.class, gols.getId());
+		golsDAO.remove(gols);
+		golsDAO.closeEntityManager();
 	}
 	
 }

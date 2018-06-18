@@ -6,39 +6,37 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Classes.Equipe;
+import sistema.daos.TimeDAO;
 
 
-@ManagedBean
-@SessionScoped
-
-public class TimeMB 
+public class TimeService 
 {
-		private Equipe  time = new Equipe();
+		TimeDAO timeDAO = new TimeDAO();
 		
 		public Equipe salvar (Equipe time)
 		{
-			time = TimeDAO.save(time);
-			TimeDAO.closeEntityManager();
+			time = timeDAO.save(time);
+			timeDAO.closeEntityManager();
 			return time;
 		}
 		
 		public List<Equipe> getTime()
 		{
-			List <Equipe> list = TimeDAO.getall(Equipe.class);
-			TimeDAO.closeEntityManager();
+			List <Equipe> list = timeDAO.getAll(Equipe.class);
+			timeDAO.closeEntityManager();
 			return list;
 		}
 		
 		public void alterar (Equipe time)
 		{
-			TimeDAO.save(time);
-			TimeDAO.closeEntityManager();
+			timeDAO.save(time);
+			timeDAO.closeEntityManager();
 		}
 		
 		public void remover (Equipe time)
 		{
-			time = TimeDAO.getById(Equipe.class, time.getNome());
-			TimeDAO.remove(time);
-			TimeDAO.closeEntityManager();
+			time = timeDAO.getById(Equipe.class, time.getIdequipe());
+			timeDAO.remove(time);
+			timeDAO.closeEntityManager();
 		}
 }

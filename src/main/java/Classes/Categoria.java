@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import system.dao.CampDAO;
+import sistema.daos.CampDAO;
 
 @SuppressWarnings({ "serial", "unused" })
 @Entity

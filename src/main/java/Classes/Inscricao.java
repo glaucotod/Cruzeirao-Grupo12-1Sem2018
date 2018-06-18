@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @SuppressWarnings("serial")
 @Entity
-public class Inscricao extends Inscrito implements Serializable
+public class Inscricao implements Serializable
 {
+	@Id
 	private long numero;
 	private boolean pagamento, validada;
 	@ManyToMany
@@ -20,8 +22,8 @@ public class Inscricao extends Inscrito implements Serializable
 	@ManyToMany
 	private List<Partida> partidas;
 	
-	public long getNumero() {
-		return numero;
+	public int getNumero() {
+		return (int) numero;
 	}
 	
 	public void setNumero(long numero) 

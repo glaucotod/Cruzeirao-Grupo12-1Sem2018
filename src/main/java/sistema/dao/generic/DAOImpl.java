@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import Classes.Inscrito;
+import Classes.Inscricao;
 
 public abstract class DAOImpl <T, I extends Serializable> {
 

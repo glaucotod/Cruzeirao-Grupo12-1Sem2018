@@ -1,9 +1,6 @@
 package sistema.service;
 
-import javax.persistence.EntityManager;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import Classes.Inscrito;
 import sistema.daos.InscDAO;
 

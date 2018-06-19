@@ -1,4 +1,4 @@
-package managedbean;
+package ManagedBean;
 
 public class GolMB 
 {

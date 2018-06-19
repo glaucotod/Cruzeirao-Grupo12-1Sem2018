@@ -1,5 +1,6 @@
 package ManagedBean;
 
-public class GolMB {
-
+public class GolMB 
+{
+	
 }

@@ -1,7 +1,6 @@
 package sistema.service;
 
 import Classes.Campeonato;
-import Classes.Inscrito;
 import sistema.daos.CampDAO;
 
 import java.util.List;

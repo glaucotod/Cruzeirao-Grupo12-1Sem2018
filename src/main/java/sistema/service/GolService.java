@@ -1,7 +1,5 @@
 package sistema.service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 import Classes.Gol;
 import sistema.daos.GolsDAO;
